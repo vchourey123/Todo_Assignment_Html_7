@@ -5,13 +5,18 @@ function onAdd(e){
 
     e.preventDefault();
     const todo = document.getElementById("Todo").value;
+    if(todo == null || todo == ""){
+        alert("Should put some Value");
+    }else{
     tBodyEl.innerHTML += `
         <tr>
         <td>${todo}</td>
         <td><button class="doneBtn">Done</button></td>
         <td><button class="deleteBtn">X</button></td>
         </tr> 
-    `
+    `}
+    todo.value = '';
+    form.reset();
 }
 
 function onDeleteRow(e){
